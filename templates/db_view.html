@@ -1,0 +1,7 @@
+<h1>{{ db }}</h1>
+<p>Collections:</p>
+<ul>
+    {% for collection in collections %}
+    <li><a href="{{ url_for('collection', db=db, collection=collection) }}">{{ collection }}</a></li>
+    {% endfor %}
+</ul>

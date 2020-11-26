@@ -1,0 +1,15 @@
+<h1>Hallo Sander</h1>
+<p>Data-Entry:</p>
+<form method="POST" action="{{ url_for('create_doc') }}">
+    Database: <input type="text" name="db_name" ><br>
+    Collection: <input type="text" name="col_name"><br>
+    key: <input type="text" name="key"><br>
+    value: <input type="text" name="value"><br>
+    <button type="submit">Submit</button>
+</form>
+<p>Databases:</p>
+<ul>
+{% for db in dbs %}
+<li><a href="{{ url_for('database', db=db) }}">{{ db }}</a></li>
+{% endfor %}
+</ul>
